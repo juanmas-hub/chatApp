@@ -7,9 +7,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
-func CreateUser[T any](c *gin.Context, user T) int {
+func CreateUser[T any](c *gin.Context, user *T) int {
 
-	result := initializers.DB.Create(&user)
+	result := initializers.DB.Create(user)
 
 	if result.Error != nil{
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -22,7 +22,7 @@ func CreateUser[T any](c *gin.Context, user T) int {
 }
 
 func CheckExistencebyEmail(c *gin.Context, user *models.User, email string) int {
-	initializers.DB.First(&user, "email = ?", email)
+	initializers.DB.First(user, "email = ?", email)
 
 	if user.ID == 0{
 		c.JSON(http.StatusBadRequest, gin.H{

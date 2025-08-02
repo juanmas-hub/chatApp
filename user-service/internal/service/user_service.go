@@ -13,7 +13,7 @@ func SignUp(c *gin.Context, username string, email string, password string) int 
 	}
 
 	var user models.User = models.User{Username: username, Email: email, Password: string(hash)}
-	if database.CreateUser(c, user) != 0 {
+	if database.CreateUser(c, &user) != 0 {
 		return 1
 	}
 	return 0

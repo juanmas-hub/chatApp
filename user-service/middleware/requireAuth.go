@@ -30,7 +30,7 @@ func RequireAuth(c *gin.Context){
 		return []byte(os.Getenv("SECRET")), nil
 	})
 
-	if token == nil || token.Valid{
+	if token == nil || !token.Valid{
 		c.AbortWithStatus(http.StatusUnauthorized)
 		return
 	}
