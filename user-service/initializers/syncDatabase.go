@@ -1,7 +1,7 @@
 package initializers
 
 import (
-	"user-service/internal/models"
+	"chatApp/user-service/internal/models"
 )
 
 func SyncDatabase(){

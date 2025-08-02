@@ -1,9 +1,9 @@
 package main
 
 import (
-	"user-service/controllers"
-	"user-service/initializers"
-	"user-service/middleware"
+	"chatApp/user-service/controllers"
+	"chatApp/user-service/initializers"
+	"chatApp/user-service/middleware"
 
 	"github.com/gin-gonic/gin"
 )

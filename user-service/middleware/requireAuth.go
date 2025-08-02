@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 	"time"
-	"user-service/initializers"
-	"user-service/internal/models"
+	"chatApp/user-service/initializers"
+	"chatApp/user-service/internal/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"

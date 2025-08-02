@@ -1,8 +1,8 @@
 package service
 
 import (
-	"user-service/internal/models"
-	"user-service/internal/database"
+	"chatApp/user-service/internal/models"
+	"chatApp/user-service/internal/database"
 	"github.com/gin-gonic/gin"
 )
 

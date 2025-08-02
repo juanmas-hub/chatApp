@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"net/http"
-	"user-service/internal/service"
+	"chatApp/user-service/internal/service"
 	"github.com/gin-gonic/gin"
 )
 
