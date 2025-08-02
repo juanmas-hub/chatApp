@@ -30,7 +30,12 @@ func RequireAuth(c *gin.Context){
 		return []byte(os.Getenv("SECRET")), nil
 	})
 
-	if claims, ok := token.Claims.(jwt.MapClaims); ok && token != nil &&token.Valid{
+	if token == nil || token.Valid{
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+	}
+
+	if claims, ok := token.Claims.(jwt.MapClaims); ok {
 	
 		// Check the experation
 		if float64(time.Now().Unix()) > claims["exp"].(float64){
