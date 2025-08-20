@@ -5,7 +5,7 @@ import "gorm.io/gorm"
 type Chat struct {
     gorm.Model
     // IDs de usuarios que participan (sin traer entidades completas)
-    ParticipantIDs []uint `json:"participantIds" gorm:"-"`
+    UsersIDs []uint `json:"usersIds" gorm:"-"`
     // Relación con mensajes (propios del microservicio)
     Messages []Message `json:"messages" gorm:"foreignKey:ChatID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }

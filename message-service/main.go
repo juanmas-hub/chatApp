@@ -1,7 +1,7 @@
 package main
 
 import (
-	//"chatApp/message-service/controllers"
+	"chatApp/message-service/controllers"
 	"chatApp/message-service/initializers"
 	//"chatApp/message-service/middleware"
 
@@ -17,6 +17,6 @@ func init(){
 func main(){
 	r := gin.Default()
 
-	//r.POST("/signup", controllers.SignUp)
+	r.POST("/create-chat", controllers.CreateChat)
 	r.Run()
 }
