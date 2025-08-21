@@ -17,7 +17,10 @@ func SignUp(c *gin.Context) {
 		return
 	}
 	
-	if service.SignUp(c, body.Username, body.Email, body.Password) != 0{
+	if service.SignUp(body.Username, body.Email, body.Password) != 0{
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "failed to SignUp",
+		})
 		return
 	}
 
@@ -35,6 +38,9 @@ func LogIn(c *gin.Context){
 	}
 	
 	if service.LogIn(c, body.Email, body.Password) != 0{
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "failed to LogIn",
+		})
 		return
 	}
 
